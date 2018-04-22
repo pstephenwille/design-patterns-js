@@ -21,6 +21,7 @@
     "test:unit": "nyc --silent ava",
     "test:nsp": "nsp check",
     "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
+    "start":"run-s build:main && node build/main/index.js",
     "cov": "run-s build test:unit cov:html && opn coverage/index.html",
     "cov:html": "nyc report --reporter=html",
     "cov:send": "nyc report --reporter=lcov > coverage.lcov && codecov",
@@ -69,7 +70,6 @@
     "trash-cli": "^1.4.0",
     "tslint": "^5.4.3",
     "tslint-config-prettier": "^1.8.0",
-    "tslint-immutable": "^4.5.1",
     "typedoc": "^0.11.1",
     "typescript": "^2.4.1"
   },
